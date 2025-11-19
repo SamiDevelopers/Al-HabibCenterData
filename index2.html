@@ -11,27 +11,13 @@
   <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap');
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Cairo', 'Segoe UI', Tahoma, Arial, sans-serif !important;
-        }
-        
-        html {
-            font-family: 'Cairo', 'Segoe UI', Tahoma, Arial, sans-serif !important;
-            direction: rtl;
-        }
-        
         body {
             box-sizing: border-box;
-            font-family: 'Cairo', 'Segoe UI', Tahoma, Arial, sans-serif !important;
-            direction: rtl !important;
-            text-align: right !important;
         }
         
-        input, select, textarea, button, label, p, h1, h2, h3, h4, h5, h6, div, span {
-            font-family: 'Cairo', 'Segoe UI', Tahoma, Arial, sans-serif !important;
+        * {
+            font-family: 'Cairo', sans-serif !important;
+            box-sizing: border-box;
         }
         
         :root {
@@ -288,7 +274,7 @@
         
         const defaultConfig = {
             center_name: 'مركز الحبيب للألحان',
-            center_subtitle: 'والدرا��ات القبطية',
+            center_subtitle: 'والدراسات القبطية',
             welcome_message: 'مرحباً بك ف����',
             footer_text: 'صُنع بحب لخدمة ا��كنيسة',
             background_color: '#2C1810',
@@ -739,7 +725,7 @@
                     localStorage.setItem('currentUser', JSON.stringify(currentUser));
                     renderAdminDashboard();
                 } else {
-                    showToast('اسم المستخدم أو كلمة المرور ����ير صحيحة', 'error');
+                    showToast('اسم المستخدم أو كلمة المرور غير صحيحة', 'error');
                 }
             }
         }
@@ -927,7 +913,7 @@
             modal.className = 'modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50';
             modal.innerHTML = `
                 <div class="modal-content dynamic-surface rounded-2xl shadow-2xl p-6 max-w-lg w-full border-2 border-gray-700">
-                    <h2 class="dynamic-text text-2xl font-bold mb-4">���� ��فع الواجبات</h2>
+                    <h2 class="dynamic-text text-2xl font-bold mb-4">���� رفع الواجبات</h2>
                     <div class="space-y-3">
                         <button onclick="uploadHomeworkByType('coptic')" class="w-full dynamic-primary-btn text-white py-4 px-6 rounded-lg font-bold btn-primary">
                             📚 رفع واجب اللغة القبطية
@@ -1092,7 +1078,7 @@
                             📗 التر�� الثاني
                         </button>
                         <button onclick="this.closest('.modal-overlay').remove()" class="w-full bg-gray-600 text-white py-3 px-6 rounded-lg font-bold btn-primary">
-                            ❌ إغل��ق
+                            ❌ إغلاق
                         </button>
                     </div>
                 </div>
@@ -1107,7 +1093,7 @@
                 midterm1: 'الميدترم - الترم الأول',
                 final1: 'الترم الأول',
                 midterm2: 'الميدترم - الترم الثاني',
-                final2: 'الترم ا��ثاني'
+                final2: 'الترم الثاني'
             };
             
             document.querySelector('.modal-overlay').remove();
@@ -1254,8 +1240,8 @@
             
             const teams = [];
             if (currentUser.academic_prep) teams.push('الإعداد الدراسي');
-            if (currentUser.control_team) teams.push('الكن��رول');
-            if (currentUser.communication_team) teams.push('��لاتصالات والمتابعة');
+            if (currentUser.control_team) teams.push('الكنترول');
+            if (currentUser.communication_team) teams.push('الاتصالات والمتابعة');
             if (currentUser.trips_team) teams.push('الرحلات والمؤتمرات');
             if (currentUser.other_admin) teams.push('إدارية أخرى');
             
@@ -1566,7 +1552,7 @@
                         }).join('')}
                         <div class="flex gap-3 mt-6">
                             <button type="submit" class="flex-1 dynamic-secondary-btn text-white py-3 px-6 rounded-lg font-bold btn-primary">
-                                💾 حف�� الحضور
+                                💾 حفظ الحضور
                             </button>
                             <button type="button" onclick="this.closest('.modal-overlay').remove()" class="flex-1 bg-gray-600 text-white py-3 px-6 rounded-lg font-bold btn-primary">
                                 ❌ إلغاء
@@ -1828,7 +1814,7 @@
                     <header class="dynamic-surface rounded-2xl shadow-lg p-6 mb-6 fade-in border border-gray-700">
                         <div class="flex justify-between items-center flex-wrap gap-4">
                             <div>
-                                <h1 class="dynamic-text text-2xl font-bold">��️ لوحة المسؤ��ل</h1>
+                                <h1 class="dynamic-text text-2xl font-bold">🛠️ لوحة المسؤ��ل</h1>
                                 <p class="center-name dynamic-text text-3xl font-bold mt-2">${config.center_name || defaultConfig.center_name}</p>
                             </div>
                             <div class="flex gap-3">
@@ -1856,7 +1842,7 @@
                         <div class="stat-card text-white p-6 rounded-xl shadow-lg">
                             <div class="text-4xl mb-2">📚</div>
                             <div class="text-3xl font-bold">${classes.length}</div>
-                            <div class="text-sm opacity-90">��لفصول الدراسية</div>
+                            <div class="text-sm opacity-90">الفصول الدراسية</div>
                         </div>
                         <div class="stat-card text-white p-6 rounded-xl shadow-lg">
                             <div class="text-4xl mb-2">📊</div>
@@ -1868,7 +1854,7 @@
                     <div class="grid md:grid-cols-2 gap-6 mb-6 slide-up">
                         <button onclick="showAddTeacher()" class="dynamic-surface p-8 rounded-2xl shadow-lg hover:shadow-xl card-hover border border-gray-700">
                             <div class="text-5xl mb-3">🎓</div>
-                            <h3 class="dynamic-text text-2xl font-bold">��ضافة خادم جديد</h3>
+                            <h3 class="dynamic-text text-2xl font-bold">إضافة خادم جديد</h3>
                             <p class="dynamic-text opacity-60 mt-2">إضافة خا��م للنظام</p>
                         </button>
                         <button onclick="showAddStudent()" class="dynamic-surface p-8 rounded-2xl shadow-lg hover:shadow-xl card-hover border border-gray-700">
@@ -1964,7 +1950,7 @@
                     <div id="admin-attendance-list" class="space-y-2"></div>
                     <div class="mt-4 flex gap-3">
                         <button onclick="saveAdminAttendance()" class="flex-1 dynamic-secondary-btn text-white py-3 px-6 rounded-lg font-bold btn-primary">
-                            💾 ح��ظ التعديلات
+                            💾 حفظ التعديلات
                         </button>
                         <button onclick="document.querySelector('.modal-overlay').remove()" class="flex-1 bg-gray-600 text-white py-3 px-6 rounded-lg font-bold btn-primary">
                             ❌ إغلاق
@@ -2193,13 +2179,13 @@
                                 <option value="أولي وثانية">أولي وثانية</option>
                                 <option value="ثالثة ورابعة">ثالثة ورابعة</option>
                                 <option value="خامسة وسادسة">خامسة وسادسة</option>
-                                <option value="أعدادي - ثانوي">أعد��دي - ثانوي</option>
+                                <option value="أعدادي - ثانوي">أعدادي - ثانوي</option>
                                 <option value="شباب وخريجين">شباب وخريجين</option>
                             </select>
                         </div>
 
                         <div class="border-2 border-light rounded-lg p-5 bg-gray-50">
-                            <p class="text-dark font-bold mb-4 text-xl">📚 مواد ا����خصص</p>
+                            <p class="text-dark font-bold mb-4 text-xl">📚 مواد ا��تخصص</p>
                             <div class="space-y-3">
                                 <label class="flex items-center gap-3 cursor-pointer text-lg">
                                     <input type="checkbox" id="spec-coptic" class="w-6 h-6 rounded">
@@ -2252,7 +2238,7 @@
 
                         <div class="flex gap-4 pt-4">
                             <button type="submit" class="flex-1 py-4 px-6 rounded-xl font-bold text-xl shadow-lg transition-all" style="background: linear-gradient(135deg, #059669 0%, #10B981 100%) !important; color: white !important;">
-                                ✅ إضافة الخ��د��
+                                ✅ إضافة الخادم
                             </button>
                             <button type="button" onclick="this.closest('.modal-overlay').remove()" 
                                 class="flex-1 py-4 px-6 rounded-xl font-bold text-xl shadow-lg transition-all" style="background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%) !important; color: white !important;">
@@ -2313,7 +2299,7 @@
                 showToast('فشل في إضافة الخادم', 'error');
                 submitBtn.disabled = false;
                 submitBtn.classList.remove('loading');
-                submitBtn.innerHTML = '➕ إضافة الخ���دم';
+                submitBtn.innerHTML = '➕ إضافة الخ��دم';
             }
         }
 
@@ -2344,7 +2330,7 @@
                         </div>
 
                         <div>
-                            <label class="block dynamic-text font-semibold mb-2">اسم ا��دارس بالكامل *</label>
+                            <label class="block dynamic-text font-semibold mb-2">اسم الدارس بالكامل *</label>
                             <input type="text" id="student-name" required
                                 class="w-full px-4 py-3 rounded-lg border-2 border-gray-600 bg-gray-800 dynamic-text"
                                 placeholder="الاسم الكامل">
@@ -2355,7 +2341,7 @@
                                 <label class="block dynamic-text font-semibold mb-2">النوع *</label>
                                 <select id="student-gender" required class="w-full px-4 py-3 rounded-lg border-2 border-gray-600 bg-gray-800 dynamic-text">
                                     <option value="">-- اختر --</option>
-                                    <option value="ذكر">ذك��</option>
+                                    <option value="ذكر">ذكر</option>
                                     <option value="أنثي">أنثي</option>
                                 </select>
                             </div>
@@ -2375,18 +2361,18 @@
                                 <option value="KG2">KG2</option>
                                 <option value="الصف الأول الأبتدائي">الصف الأول الأبتدائ��</option>
                                 <option value="الصف الثاني الأبتدائي">الصف الثاني الأبتدائي</option>
-                                <option value="الصف الثالث الأبتدائي">الصف الث��لث الأبتدائي</option>
+                                <option value="الصف الثالث الأبتدائي">الصف الثالث الأبتدائي</option>
                                 <option value="الصف الرابع الأبتدائي">الصف الرابع الأبتدائي</option>
                                 <option value="الصف الخامس الأبتدائي">الصف الخامس الأبتدائي</option>
                                 <option value="الصف السادس الأبتدائي">الصف السادس الأبتدائي</option>
-                                <option value="��لصف الأول الأعدادي">الصف الأول الأعدادي</option>
-                                <option value="الصف الثاني الأ��دادي">الصف الثاني الأعدادي</option>
+                                <option value="الصف الأول الأعدادي">الصف الأول الأعدادي</option>
+                                <option value="الصف الثاني الأعدادي">الصف الثاني الأعدادي</option>
                                 <option value="الصف الثالث الأعدادي">الصف الثالث الأعدادي</option>
                                 <option value="الصف الأول الثانو��">الصف الأول الثانوي</option>
-                                <option value="الصف الثاني ال��انوي">الصف الثاني الثانوي</option>
+                                <option value="الصف الثاني الثانوي">الصف الثاني الثانوي</option>
                                 <option value="الصف الث��لث الثانوي">الصف الثالث الثانوي</option>
                                 <option value="شباب">شباب</option>
-                                <option value="خريجين">��ريجين</option>
+                                <option value="خريجين">خريجين</option>
                             </select>
                         </div>
 
@@ -2429,7 +2415,7 @@
                                     <option value="ثالثة ورابعة">ثالثة ورابعة</option>
                                     <option value="خامسة وسادسة">خامسة وسادسة</option>
                                     <option value="أعدادي - ثانوي">أعدادي - ثانوي</option>
-                                    <option value="شبا�� وخريجين">شباب وخريجين</option>
+                                    <option value="شباب وخريجين">شباب وخريجين</option>
                                 </select>
                             </div>
                         </div>
@@ -2672,12 +2658,12 @@
             };
             
             localStorage.setItem('googleConfig', JSON.stringify(googleConfig));
-            showToast('تم حفظ إعداد��ت Google بنجاح! ✓', 'success');
+            showToast('تم حفظ إعدادات Google بنجاح! ✓', 'success');
         }
 
         async function syncAllToGoogle() {
             if (!googleConfig.scriptUrl) {
-                showToast('الرجاء حفظ إع��ادات Google أولاً', 'error');
+                showToast('الرجاء حفظ إعدادات Google أولاً', 'error');
                 return;
             }
 
@@ -2789,7 +2775,7 @@
                     })
                 });
 
-                console.log('تم ��رسال البيانات إلى Google Sheets:', action, dataToSend);
+                console.log('تم إرسال البيانات إلى Google Sheets:', action, dataToSend);
 
                 const updateResult = await window.dataSdk.update({
                     ...record,
@@ -2864,5 +2850,5 @@
 
         window.addEventListener('DOMContentLoaded', initializeApp);
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a12a179a65d70ec',t:'MTc2MzU4NTk2MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a12934e54b6809f',t:'MTc2MzU4NTM3OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
